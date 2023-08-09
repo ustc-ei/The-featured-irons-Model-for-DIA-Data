@@ -326,7 +326,7 @@ def GetLFQAndTrypsin_HFXData(
         Trypsin_HFXvalDataSet,
         Trypsin_HFXvalDataDecoySet,
     ) = SplitTrainAndValDataSet(
-        Trypsin_HFXTrainDataSet, Trypsin_HFXTrainDataDecoySet, 5000, 5000
+        Trypsin_HFXTrainDataSet, Trypsin_HFXTrainDataDecoySet, 1000, 1000
     )
 
     trainDataSet = ConcatDataset([lfqtrainDataSet, Trypsin_HFXtrainDataSet])

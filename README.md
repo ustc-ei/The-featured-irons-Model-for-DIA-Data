@@ -7,6 +7,3 @@
 
 We referenced the self-Attention module from the Transformer which was proposed in the paper "Attention is all you need"
 
-
-
-
