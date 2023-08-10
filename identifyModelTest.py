@@ -46,6 +46,7 @@ def GenerateHeatMap(SpectronautResult: Dict[str, Dict[Tuple[str, int], List]], D
     heatmapDeepLearningAndDeepLearning = [[0 for _ in range(len(SpectronautResult))]
                                           for _ in range(len(SpectronautResult))]
     files = [file for file in SpectronautResult.keys()]
+    files.sort()
     for i, fileA in enumerate(files):
         for j, fileB in enumerate(files):
             SpectronautLibsA = set(SpectronautResult[fileA])
