@@ -18,10 +18,10 @@ def GenerateTheHeatMapFig(heatmapData: np.ndarray, files: List[str], path: str):
     ax.set_xticks(np.arange(len(files)), labels=files,
                   rotation=45, rotation_mode="anchor", ha="right")
     ax.set_yticks(np.arange(len(files)), labels=files)
-    for i in range(len(files)):
-        for j in range(len(files)):
-            ax.text(j, i, heatmapData[i, j],
-                    ha="center", va="center", color="w")
+    # for i in range(len(files)):
+    #     for j in range(len(files)):
+    #         ax.text(j, i, heatmapData[i, j],
+    #                 ha="center", va="center", color="w")
     a = ax.imshow(heatmapData)
     figure.colorbar(a)
     figure.savefig(path + ".png", dpi=1000)
