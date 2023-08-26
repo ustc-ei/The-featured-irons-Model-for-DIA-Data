@@ -4,7 +4,7 @@ import math
 
 
 class Attention(nn.Module):
-    def __init__(self, libSpectrumIfShareDim, attentionDim):
+    def __init__(self, libSpectrumIfShareDim: int, attentionDim: int):
         super(Attention, self).__init__()
         self.attentionDim = attentionDim
         # batch * 6 * 1
@@ -26,7 +26,7 @@ class Attention(nn.Module):
 
 
 class AttentionWeightMatrix(nn.Module):
-    def __init__(self, libSpectrumIfShareDim, attentionDim):
+    def __init__(self, libSpectrumIfShareDim: int, attentionDim: int):
         super(AttentionWeightMatrix, self).__init__()
         self.attentionDim = attentionDim
         self.Q = nn.Linear(libSpectrumIfShareDim, attentionDim)
@@ -46,7 +46,7 @@ class AttentionWeightMatrix(nn.Module):
 
 # 肽段定性模型
 class identifyModel(nn.Module):
-    def __init__(self, libMzNum, libMsMinNum, attentionDim):
+    def __init__(self, libMzNum: int, libMsMinNum: int, attentionDim: int):
         r"""
         Input:
         * libMzNum 肽段峰数
@@ -122,7 +122,7 @@ class identifyModel(nn.Module):
             nn.Sigmoid(),
         )
 
-    def CalculateDistanceAndPeakSum(self, libMz, libMsMz):
+    def CalculateDistanceAndPeakSum(self, libMz: torch.Tensor, libMsMz: torch.Tensor) -> torch.Tensor:
         r"""
         Input:
         * libMz 肽段参考图谱峰信息
